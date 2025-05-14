@@ -27,7 +27,6 @@
         packages = with pkgs; [
             neofetch
             pwvucontrol
-            cowsay
         ];
 
         file = {
@@ -41,6 +40,13 @@
             waybar_config = {
                 target = ".config/waybar/config";
                 text = builtins.readFile ../configs/waybar.conf;
+                recursive = true;
+                force = true;
+            };
+
+            bash_rc = {
+                target = "./.bashrc";
+                text = builtins.readFile ../configs/bashrc.sh;
                 recursive = true;
                 force = true;
             };
