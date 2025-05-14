@@ -32,13 +32,13 @@
 
 	file.hyprland_config = {
 		target = ".config/hypr/hyprland.conf";
-		source = "../dotfiles/hyprland.conf";
+		source = "../configs/hyprland.conf";
 		recursive = true;
 		force = true;
 	};
 	file.waybar_config = {
 		target = ".config/waybar/config";
-		source = "../dotfiles/waybar.conf";
+		source = "../configs/waybar.conf";
 		recursive = true;
 		force = true;
 	};
