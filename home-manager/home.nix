@@ -30,39 +30,44 @@
 
 	packages = [ pkgs.neofetch ];
 
-	file.hyprland_config = {
-		target = ".config/hypr/hyprland.conf";
-		source = "../configs/hyprland.conf";
-		recursive = true;
-		force = true;
-	};
-	file.waybar_config = {
-		target = ".config/waybar/config";
-		source = "../configs/waybar.conf";
-		recursive = true;
-		force = true;
+	files = {
+		hyprland_config = {
+			target = ".config/hypr/hyprland.conf";
+			source = "../configs/hyprland.conf";
+			recursive = true;
+			force = true;
+		};
+
+		file.waybar_config = {
+			target = ".config/waybar/config";
+			source = "../configs/waybar.conf";
+			recursive = true;
+			force = true;
+		};
 	};
   };
 
-  # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
+  programs = {
+	  home-manager.enable = true;
 
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.kitty = {
-	  enable = true;
-	  settings = {
-		  confirm_os_window_close = 0;
-		  enable_audio_bell = "no";
-		  scrollback_lines = 5000;
+	  kitty = {
+		  enable = true;
+		  settings = {
+			  confirm_os_window_close = 0;
+			  enable_audio_bell = "no";
+			  scrollback_lines = 5000;
+		  };
+	  };
+
+	  git = {
+		  enable = true;
+		  userName = "Sam Manibog";
+		  userEmail = "sfmanibog@outlook.com";
 	  };
   };
 
-  programs.git = {
-	  enable = true;
-	  userName = "Sam Manibog";
-	  userEmail = "sfmanibog@outlook.com";
+  services = {
+  	ssh-agent.enable = true;
   };
 
   # Nicely reload system units when changing configs
