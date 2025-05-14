@@ -24,19 +24,23 @@
         username = "sam";
         homeDirectory = "/home/sam";
 
-        packages = [ pkgs.neofetch ];
+        packages = with pkgs; [
+            neofetch
+            pwvucontrol
+            cowsay
+        ];
 
-        files = {
+        file = {
             hyprland_config = {
                 target = ".config/hypr/hyprland.conf";
-                source = "../configs/hyprland.conf";
+                text = builtins.readFile ../configs/hyprland.conf;
                 recursive = true;
                 force = true;
             };
 
-            file.waybar_config = {
+            waybar_config = {
                 target = ".config/waybar/config";
-                source = "../configs/waybar.conf";
+                text = builtins.readFile ../configs/waybar.conf;
                 recursive = true;
                 force = true;
             };
@@ -44,8 +48,6 @@
     };
 
     programs = {
-        home-manager.enable = true;
-
         kitty = {
             enable = true;
             settings = {

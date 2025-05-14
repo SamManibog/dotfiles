@@ -77,7 +77,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.sam = {
         isNormalUser = true;
-        description = "Sam";
+        description = "Sam Manibog";
         extraGroups = [ "networkmanager" "wheel" ];
     };
 
@@ -103,6 +103,7 @@
     # List packages installed in system profile. To search, run:
     # $ nix search wget
     environment.systemPackages = with pkgs; [
+        home-manager
         #DE
         networkmanagerapplet
         nwg-look
