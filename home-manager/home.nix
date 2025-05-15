@@ -29,6 +29,7 @@
             neovim
             btop
             pwvucontrol
+            iwgtk
         ];
 
         file = {
