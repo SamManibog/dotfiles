@@ -30,6 +30,7 @@
             btop
             pwvucontrol
             iwgtk
+            wofi
         ];
 
         file = {
