@@ -14,15 +14,14 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.plymouth.enable = true;
 
-    networking.hostName = "nixos"; # Define your hostname.
-    # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
-    # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Enable networking
+    networking.hostName = "nixos"; # Define your hostname.
+    programs.nm-applet.enable = true;
     networking.networkmanager.enable = true;
+    networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     # Set your time zone.
     time.timeZone = null;
@@ -88,13 +87,14 @@
     };
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    #hyprland deps
+    # Hyprland deps
     programs.waybar.enable = true;
     programs.firefox.enable = true;
 
-    programs.thunar = {
+    # File Explorer
+    programs.nautilus-open-any-terminal = {
         enable = true;
-        plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+        terminal = "kitty";
     };
 
     # Allow unfree packages
@@ -105,13 +105,15 @@
     environment.systemPackages = with pkgs; [
         home-manager
         #DE
+        xarchiver
         networkmanagerapplet
+        nautilus
         nwg-look
         brightnessctl
         kitty
 
         #utils
-        neovim
+        vim
         unzip
 
         # c/c++ programming

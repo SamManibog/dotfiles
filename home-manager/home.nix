@@ -26,6 +26,8 @@
 
         packages = with pkgs; [
             neofetch
+	    neovim
+            btop
             pwvucontrol
         ];
 
