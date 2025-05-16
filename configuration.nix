@@ -19,15 +19,9 @@
 
     # Enable networking
     networking.hostName = "nixos"; # Define your hostname.
-    networking.wireless.iwd = {
-        enable = true;
-    };
-    /*
     programs.nm-applet.enable = true;
     networking.networkmanager.enable = true;
-    */
     networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
 
     # Set your time zone.
     time.timeZone = null;
@@ -86,6 +80,7 @@
         extraGroups = [ "networkmanager" "wheel" ];
     };
 
+    # Login Manager (SDDM)
     programs.uwsm.enable = true;
     programs.hyprland = {
         enable = true;
@@ -97,10 +92,16 @@
     programs.waybar.enable = true;
     programs.firefox.enable = true;
 
-    # File Explorer
+    # File Explorer (Nautilus)
     programs.nautilus-open-any-terminal = {
         enable = true;
         terminal = "kitty";
+    };
+
+    # Text Editor (Neovim)
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
     };
 
     # Allow unfree packages
@@ -119,7 +120,6 @@
         kitty
 
         #utils
-        vim
         unzip
 
         # c/c++ programming

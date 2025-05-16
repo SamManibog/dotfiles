@@ -26,10 +26,8 @@
 
         packages = with pkgs; [
             neofetch
-            neovim
             btop
             pwvucontrol
-            iwgtk
             wofi
         ];
 
