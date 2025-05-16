@@ -5,6 +5,7 @@
 {
     # You can import other home-manager modules here
     imports = [
+        ./modules/waybar.nix
     ];
 
     nixpkgs = {
@@ -39,12 +40,14 @@
                 force = true;
             };
 
+            /*
             waybar_config = {
                 target = ".config/waybar/config";
                 text = builtins.readFile ../configs/waybar.conf;
                 recursive = true;
                 force = true;
             };
+            */
 
             bash_rc = {
                 target = "./.bashrc";

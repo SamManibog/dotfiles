@@ -9,10 +9,29 @@
             ./hardware-configuration.nix
         ];
 
-    # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    #boot.plymouth.enable = true;
+    # Bootloader
+    boot = {
+        loader = {
+            systemd-boot.enable = true;
+            efi.canTouchEfiVariables = true;
+        };
+
+        plymouth.enable = true;
+
+        # Enable "Silent boot"
+        consoleLogLevel = 3;
+        initrd.verbose = false;
+        kernelParams = [
+            "quiet"
+            "splash"
+            "boot.shell_on_fail"
+            "udev.log_priority=3"
+            "rd.systemd.show_status=auto"
+        ];
+
+        # Note: open the bootloader list by pressing any key.
+        loader.timeout = 0;
+    };
 
     # Configure network proxy if necessary
     # networking.proxy.default = "http://user:password@proxy:port/";
@@ -88,8 +107,7 @@
     };
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-    # Hyprland deps
-    programs.waybar.enable = true;
+    # Web Browser (firefox)
     programs.firefox.enable = true;
 
     # File Explorer (Nautilus)
