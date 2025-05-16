@@ -29,6 +29,7 @@
             neofetch
             btop
             pwvucontrol
+            connman-gtk
             wofi
         ];
 
