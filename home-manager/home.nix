@@ -40,15 +40,6 @@
                 force = true;
             };
 
-            /*
-            waybar_config = {
-                target = ".config/waybar/config";
-                text = builtins.readFile ../configs/waybar.conf;
-                recursive = true;
-                force = true;
-            };
-            */
-
             bash_rc = {
                 target = "./.bashrc";
                 text = builtins.readFile ../configs/bashrc.sh;
