@@ -5,10 +5,11 @@
         enable = true;
 
         settings.mainBar = {
-            layer = "top";
+            layer = "bottom";
             modules-left =  ["clock" "cpu" "memory"];
             modules-center = ["hyprland/workspaces"];
             modules-right = ["pulseaudio" "tray" "battery"];
+
             battery = {
                 format = "{capacity}% {icon}";
                 format-icons = ["" "" "" "" ""];
@@ -24,9 +25,9 @@
                     default = "";
                     active = "-";
                 };
-            };
-            persistent-workspaces = {
-                "*" = 9;
+                persistent-workspaces = {
+                    "*" = 9;
+                };
             };
             pulseaudio = {
                 on-click = "pwvucontrol";
