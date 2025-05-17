@@ -41,12 +41,14 @@
                 force = true;
             };
 
+            /*
             bash_rc = {
                 target = "./.bashrc";
                 text = builtins.readFile ../configs/bashrc.sh;
                 recursive = true;
                 force = true;
             };
+            */
         };
     };
 
@@ -64,6 +66,16 @@
             enable = true;
             userName = "Sam Manibog";
             userEmail = "sfmanibog@outlook.com";
+        };
+        
+        bash = {
+            enable = true;
+            initExtra = "neofetch";
+            shellAliases = {
+                rebuild-sys = "sudo nixos-rebuild switch --flake ~/.dotfiles --show-trace";
+                rebuild-home = "home-manager switch --flake ~/.dotfiles --show-trace";
+                dotfiles = "nvim ~/.dotfiles";
+            };
         };
     };
 
