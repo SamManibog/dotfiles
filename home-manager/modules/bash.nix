@@ -4,11 +4,11 @@
     programs.bash = {
         enable = true;
 
-        initExtra = "neofetch";
-        shellAliases = {
-            rebuild-sys = "sudo nixos-rebuild switch --flake ~/.dotfiles --show-trace";
-            rebuild-home = "home-manager switch --flake ~/.dotfiles --show-trace";
-            dotfiles = "nvim ~/.dotfiles";
-        };
+        initExtra = ''
+            neofetch
+            alias rebuild-sys="sudo nixos-rebuild switch --flake ~/.dotfiles --show-trace"
+            alias rebuild-home="home-manager switch --flake ~/.dotfiles --show-trace"
+            alias dotfiles="nvim ~/.dotfiles"
+        '';
     };
 }
