@@ -8,6 +8,7 @@
         ./modules/waybar.nix
         ./modules/hyprland.nix
         ./modules/bash.nix
+        ./modules/wofi.nix
     ];
 
     nixpkgs = {
@@ -31,7 +32,6 @@
             neofetch
             btop
             pwvucontrol
-            wofi
         ];
     };
 

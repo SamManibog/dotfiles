@@ -1,6 +1,11 @@
-{ inputs, lib, config, pkgs, ... }:
+{ ... }:
 
 {
+    import = [
+        ./wofi.nix
+        ./waybar.nix
+    ]
+
     wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
@@ -9,7 +14,7 @@
             # Variables
             "$terminal" = "kitty";
             "$fileManager" = "nautilus";
-            "$menu" = "pkill wofi; wofi --normal-window --show drun";
+            "$menu" = "pkill wofi; wofi --show drun -i -b -n -a";
             "$mainMod" = "SUPER";
 
             monitor = ",preferred,auto,auto";
