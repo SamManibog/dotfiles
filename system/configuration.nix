@@ -14,6 +14,7 @@
             ./modules/sddm.nix
             ./modules/fonts.nix
             ./modules/networking.nix
+            ./modules/automount.nix
 
             ./hardware-configuration.nix
         ];

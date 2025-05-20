@@ -32,6 +32,7 @@
             neofetch
             btop
             pwvucontrol
+            gimp3-with-plugins
         ];
     };
 
