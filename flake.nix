@@ -18,7 +18,7 @@
             nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs;};
                 modules = [
-                    ./configuration.nix
+                    ./system/configuration.nix
                     inputs.home-manager.nixosModules.default
                 ];
             };
@@ -27,7 +27,9 @@
                 "sam@nixos" = home-manager.lib.homeManagerConfiguration {
                     pkgs = nixpkgs.legacyPackages.x86_64-linux;
                     extraSpecialArgs = {inherit inputs outputs;};
-                    modules = [./home-manager/home.nix];
+                    modules = [
+                        ./home-manager/home.nix
+                    ];
                 };
             };
         };

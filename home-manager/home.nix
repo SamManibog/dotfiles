@@ -31,20 +31,8 @@
             neofetch
             btop
             pwvucontrol
-            connman-gtk
             wofi
         ];
-
-        file = {
-            /*
-            hyprland_config = {
-                target = ".config/hypr/hyprland.conf";
-                text = builtins.readFile ../configs/hyprland.conf;
-                recursive = true;
-                force = true;
-            };
-            */
-        };
     };
 
     programs = {
@@ -66,6 +54,7 @@
 
     services = {
         ssh-agent.enable = true;
+        blueman-applet.enable = true;
     };
 
     # Nicely reload system units when changing configs

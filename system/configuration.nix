@@ -5,7 +5,16 @@
 { config, pkgs, inputs, ... }:
 {
     imports =
-        [ # Include the results of the hardware scan.
+        [
+            ./modules/bluetooth.nix
+            ./modules/dbus.nix
+            ./modules/hyprland.nix
+            ./modules/wayland.nix
+            ./modules/pipewire.nix
+            ./modules/sddm.nix
+            ./modules/fonts.nix
+            ./modules/networking.nix
+
             ./hardware-configuration.nix
         ];
 
@@ -33,28 +42,6 @@
         loader.timeout = 0;
     };
 
-    # Configure network proxy if necessary
-    # networking.proxy.default = "http://user:password@proxy:port/";
-
-    # Enable networking
-    networking.hostName = "nixos"; # Define your hostname.
-    networking.wireless.iwd = {
-        enable = true;
-        settings = {
-            Network.EnableIPv6 = true;
-            Settings.AutoConnect = true;
-        };
-    };
-    services.connman = {
-        enable = true;
-        wifi.backend = "iwd";
-    };
-    /*
-    programs.nm-applet.enable = true;
-    networking.networkmanager.enable = true;
-    */
-    networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
     # Set your time zone.
     time.timeZone = null;
 
@@ -73,36 +60,8 @@
         LC_TIME = "en_US.UTF-8";
     };
 
-    # Enable sddm
-    services.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-    };
-
     # Enable CUPS to print documents.
     services.printing.enable = true;
-
-    # Enable sound with pipewire.
-    services.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        # If you want to use JACK applications, uncomment this
-        #jack.enable = true;
-
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
-    };
-
-    # Enable bluetooth
-    hardware.bluetooth = {
-        enable = true;
-        powerOnBoot = true;
-    };
 
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.sam = {
@@ -110,14 +69,6 @@
         description = "Sam Manibog";
         extraGroups = [ "networkmanager" "wheel" ];
     };
-
-    # Login Manager (SDDM)
-    programs.uwsm.enable = true;
-    programs.hyprland = {
-        enable = true;
-        withUWSM = true;
-    };
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
     # Web Browser (firefox)
     programs.firefox.enable = true;
@@ -158,17 +109,6 @@
 
         # wget
     ];
-
-    fonts.packages = with pkgs; [
-        nerd-fonts.commit-mono
-        roboto
-        paratype-pt-serif
-    ];
-    fonts.fontconfig.defaultFonts = {
-        monospace = [ "CommitMono Nerd Font Mono" ];
-        sansSerif = [ "Roboto" "CommitMono NerdFont" ];
-        serif = [ "Pt-Serif" "CommitMono NerdFont" ];
-    };
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
