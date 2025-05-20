@@ -1,10 +1,10 @@
-{ ... }:
+{ config, ... }:
 
 {
-    import = [
+    imports = [
         ./wofi.nix
         ./waybar.nix
-    ]
+    ];
 
     wayland.windowManager.hyprland = {
         enable = true;
