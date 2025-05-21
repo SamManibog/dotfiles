@@ -46,7 +46,6 @@
             };
         };
 
-        targets.hyprland.enable = false;
         targets.waybar.enable = false;
     };
 }
