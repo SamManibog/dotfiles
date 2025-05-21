@@ -40,7 +40,7 @@
                     headphones-muted = "󰟎";
                     phone = "";
                     phone-muted = "";
-                    default = ["" ""];
+                    default = ["" "" ""];
                     default-muted = "󰝟";
                 };
                 scroll-step = 0;
