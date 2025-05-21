@@ -45,5 +45,8 @@
                 name = "Noto Color Emoji";
             };
         };
+
+        targets.hyprland.enable = false;
+        targets.waybar.enable = false;
     };
 }

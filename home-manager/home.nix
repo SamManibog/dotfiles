@@ -9,6 +9,7 @@
         ./modules/hyprland.nix
         ./modules/bash.nix
         ./modules/wofi.nix
+        ./modules/kitty.nix
 
         ../themes/stylix.nix
     ];
@@ -38,21 +39,10 @@
         ];
     };
 
-    programs = {
-        kitty = {
-            enable = true;
-            settings = {
-                confirm_os_window_close = 0;
-                enable_audio_bell = "no";
-                scrollback_lines = 5000;
-            };
-        };
-
-        git = {
-            enable = true;
-            userName = "Sam Manibog";
-            userEmail = "sfmanibog@outlook.com";
-        };
+    programs.git = {
+        enable = true;
+        userName = "Sam Manibog";
+        userEmail = "sfmanibog@outlook.com";
     };
 
     services = {

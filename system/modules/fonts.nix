@@ -10,5 +10,6 @@
         monospace = [ "CommitMono Nerd Font Mono" ];
         sansSerif = [ "Roboto" "CommitMono NerdFont" ];
         serif = [ "Pt-Serif" "CommitMono NerdFont" ];
+        emoji = [ "Noto Color Emoji" ];
     };
 }
