@@ -6,15 +6,15 @@
 
         settings.mainBar = {
             layer = "bottom";
-            modules-left = ["battery" "cpu" "memory" "pulseaudio"];
+            modules-left = ["battery" "cpu" "memory" "pulseaudio#in" "pulseaudio#out"];
             modules-center = ["hyprland/workspaces"];
             modules-right =  ["tray" "clock"];
 
             battery = {
                 format = "{capacity}% {icon}";
                 format-icons = ["" "" "" "" ""];
-                tooltip-format = "{time} remaining";
-            };
+                tooltip-format = "{time} remaining"; };
+                interval = 10;
             clock = {
                 format = "{:%A %b %d, %Y - %I:%M:%S}";
                 interval = 1;
@@ -30,11 +30,11 @@
                     "*" = 9;
                 };
             };
-            pulseaudio = {
+            "pulseaudio#out" = {
                 on-click = "pwvucontrol";
                 format = "{volume}% {icon}";
                 format-bluetooth = "{volume}% {icon}";
-                format-muted = "󰝟";
+                format-muted = "0% 󰝟";
                 format-icons = {
                     headphones = "";
                     headphones-muted = "󰟎";
@@ -43,15 +43,22 @@
                     default = ["" ""];
                     default-muted = "󰝟";
                 };
-                smooth-scrolling-threshold = 0;
-                scroll-step = 0.5;
-                reverse-scrolling = true;
+                scroll-step = 0;
+            };
+            "pulseaudio#in" = {
+                on-click = "pwvucontrol";
+                format = "{format_source}";
+                format-source = "{volume}% 󰍬";
+                format-source-muted = "0% 󰍭";
+                scroll-step = 0;
             };
             memory = {
                 format = "{percentage}% ";
+                interval = 10;
             };
             cpu = {
                 format = "{usage}% ";
+                interval = 10;
             };
             tray = {
                 icon-size = 20;
