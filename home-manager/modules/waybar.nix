@@ -6,9 +6,9 @@
 
         settings.mainBar = {
             layer = "bottom";
-            modules-left =  ["clock" "cpu" "memory"];
+            modules-left = ["battery" "cpu" "memory" "pulseaudio"];
             modules-center = ["hyprland/workspaces"];
-            modules-right = ["pulseaudio" "tray" "battery"];
+            modules-right =  ["tray" "clock"];
 
             battery = {
                 format = "{capacity}% {icon}";
@@ -16,7 +16,8 @@
                 tooltip-format = "{time} remaining";
             };
             clock = {
-                format = "{:%I:%M %b %d}";
+                format = "{:%A %b %d, %Y - %I:%M:%S}";
+                interval = 1;
                 tooltip = false;
             };
             "hyprland/workspaces" = {

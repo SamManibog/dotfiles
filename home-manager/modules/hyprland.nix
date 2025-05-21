@@ -38,6 +38,7 @@
                 resize_on_border = false;
                 allow_tearing = false;
                 layout = "dwindle";
+                no_focus_fallback = true;
             };
 
             decoration = {
@@ -132,18 +133,30 @@
                 "$mainMod, Return, exec, $terminal"
                 "$mainMod, I, exec, firefox"
                 "$mainMod, Q, killactive,"
+                "$mainMod Shift Control, Q, forcekillactive,"
                 "$mainMod, E, exec, $fileManager"
                 "$mainMod, F, Fullscreen,"
                 "$mainMod, R, exec, $menu"
                 "$mainMod, V, togglesplit, # dwindle"
                 "$mainMod Shift, V, togglefloating,"
-                "$mainMod Control, R, exec, pkill waybar; waybar"
 
                 # Move focus with mainMod + h, j, k, l
                 "$mainMod, h, movefocus, l"
-                "$mainMod, k, movefocus, r"
-                "$mainMod, l, movefocus, u"
                 "$mainMod, j, movefocus, d"
+                "$mainMod, k, movefocus, u"
+                "$mainMod, l, movefocus, r"
+
+                # Move window with mainMod Shift + h, j, k, l
+                "$mainMod Shift, h, movewindow, l"
+                "$mainMod Shift, j, movewindow, d"
+                "$mainMod Shift, k, movewindow, u"
+                "$mainMod Shift, l, movewindow, r"
+
+                # Resize window with mainMod Shift + h, j, k, l
+                "$mainMod Control, h, resizeactive, -10 0"
+                "$mainMod Control, j, resizeactive, 0 10"
+                "$mainMod Control, k, resizeactive, 0 -10"
+                "$mainMod Control, l, resizeactive, 10 0"
 
                 # Switch workspaces with mainMod + [1-9]
                 "$mainMod, 1, workspace, 1"
