@@ -20,7 +20,7 @@
                 system = "x86_64-linux";
                 specialArgs = {inherit inputs;};
                 modules = [
-                    # stylix.nixosModules.stylix
+                    stylix.nixosModules.stylix
                     ./system/configuration.nix
                     inputs.home-manager.nixosModules.default
                 ];
@@ -31,6 +31,7 @@
                     pkgs = nixpkgs.legacyPackages.x86_64-linux;
                     extraSpecialArgs = {inherit inputs outputs;};
                     modules = [
+                        stylix.homeModules.stylix
                         ./home-manager/home.nix
                     ];
                 };

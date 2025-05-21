@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
     fonts.packages = with pkgs; [
         nerd-fonts.commit-mono
         roboto
         paratype-pt-serif
+        noto-fonts-emoji
     ];
     fonts.fontconfig.defaultFonts = {
         monospace = [ "CommitMono Nerd Font Mono" ];

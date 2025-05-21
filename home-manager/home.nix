@@ -9,6 +9,8 @@
         ./modules/hyprland.nix
         ./modules/bash.nix
         ./modules/wofi.nix
+
+        ../themes/stylix.nix
     ];
 
     nixpkgs = {

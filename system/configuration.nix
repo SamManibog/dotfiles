@@ -16,6 +16,8 @@
             ./modules/networking.nix
             ./modules/automount.nix
 
+            ../themes/stylix.nix
+
             ./hardware-configuration.nix
         ];
 
