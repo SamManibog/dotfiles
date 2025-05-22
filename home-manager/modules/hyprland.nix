@@ -8,6 +8,7 @@
 
     home.packages = with pkgs; [ swayosd hyprpaper ];
     services.swayosd.enable = true;
+    services.hyprpaper.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
@@ -25,7 +26,6 @@
             exec-once = [
                 "$terminal"
                 "waybar"
-                "hyprpaper"
             ];
 
             env = [

@@ -11,7 +11,10 @@
             ./modules/hyprland.nix
             ./modules/wayland.nix
             ./modules/pipewire.nix
-            ./modules/sddm.nix
+
+            #./modules/sddm.nix
+            ./modules/regreet.nix
+
             ./modules/fonts.nix
             ./modules/networking.nix
             ./modules/automount.nix

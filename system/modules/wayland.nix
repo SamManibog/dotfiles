@@ -5,9 +5,7 @@
         ./dbus.nix
     ];
 
-    environment.systemPackages = with pkgs; [
-        wayland
-    ];
+    environment.systemPackages = with pkgs; [ wayland ];
 
     # Configure xwayland
     services.xserver = {

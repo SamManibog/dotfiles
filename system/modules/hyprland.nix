@@ -4,7 +4,6 @@
         ./wayland.nix
         ./pipewire.nix
         ./dbus.nix
-        ./sddm.nix
     ];
 
     security.pam.services.login.enableGnomeKeyring = true;
