@@ -15,6 +15,7 @@
             ./modules/fonts.nix
             ./modules/networking.nix
             ./modules/automount.nix
+            #./modules/plymouth.nix
 
             ../themes/stylix.nix
 
@@ -27,19 +28,6 @@
             systemd-boot.enable = true;
             efi.canTouchEfiVariables = true;
         };
-
-        plymouth.enable = true;
-
-        # Enable "Silent boot"
-        consoleLogLevel = 3;
-        initrd.verbose = false;
-        kernelParams = [
-            "quiet"
-            "splash"
-            "boot.shell_on_fail"
-            "udev.log_priority=3"
-            "rd.systemd.show_status=auto"
-        ];
 
         # Note: open the bootloader list by pressing any key.
         loader.timeout = 0;

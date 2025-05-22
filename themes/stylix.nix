@@ -3,6 +3,7 @@
 {
     stylix = {
         enable = true;
+
         image = ../assets/sunset_mountain.png;
         autoEnable = true;
         base16Scheme = {
@@ -45,7 +46,5 @@
                 name = "Noto Color Emoji";
             };
         };
-
-        targets.waybar.enable = false;
     };
 }
