@@ -1,5 +1,6 @@
 { pkgs, ... }:
 
+/*
 let
     hyprgreetcfg = pkgs.writeText "hyprland-regreet.conf" ''
 exec-once = regreet; hyprctl dispatch exit
@@ -10,7 +11,9 @@ misc {
 }
         '';
 in
+*/
 {
+    /*
     imports = [
         ./hyprland.nix
     ];
@@ -20,15 +23,14 @@ in
         settings = {
             default_session = {
                 command = "Hyprland --config " + hyprgreetcfg;
-                user = "greeter";
             };
         };
     };
 
     environment.systemPackages = [ pkgs.greetd.regreet ];
-    /*
+*/
     programs.regreet = {
         enable = true;
+        cageArgs = [];
     };
-    */
 }

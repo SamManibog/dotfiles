@@ -10,6 +10,7 @@
     # Configure xwayland
     services.xserver = {
         enable = true;
+        tty = null;
         xkb = {
             layout = "us";
             variant = "";

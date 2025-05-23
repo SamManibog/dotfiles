@@ -4,8 +4,8 @@
     stylix = {
         enable = true;
 
-        image = ../assets/sunset_mountain.png;
         autoEnable = true;
+        image = ../assets/sunset_mountain.png;
         base16Scheme = {
             base00 = "1b202a";
             base01 = "282f3d";

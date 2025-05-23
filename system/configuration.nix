@@ -18,7 +18,7 @@
             ./modules/fonts.nix
             ./modules/networking.nix
             ./modules/automount.nix
-            #./modules/plymouth.nix
+            ./modules/plymouth.nix
 
             ../themes/stylix.nix
 
