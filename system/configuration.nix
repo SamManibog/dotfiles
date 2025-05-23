@@ -12,8 +12,8 @@
             ./modules/wayland.nix
             ./modules/pipewire.nix
 
-            #./modules/sddm.nix
-            ./modules/regreet.nix
+            ./modules/sddm.nix
+            #./modules/regreet.nix
 
             ./modules/fonts.nix
             ./modules/networking.nix
@@ -73,12 +73,6 @@
         terminal = "kitty";
     };
 
-    # Text Editor (Neovim)
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-    };
-
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -87,6 +81,7 @@
     environment.systemPackages = with pkgs; [
         home-manager
         #DE
+        neovim
         xarchiver
         networkmanagerapplet
         nautilus

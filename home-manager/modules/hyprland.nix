@@ -4,9 +4,15 @@
     imports = [
         ./wofi.nix
         ./waybar.nix
+        ./hyprlock.nix
+        ./hypridle.nix
     ];
 
-    home.packages = with pkgs; [ swayosd hyprpaper ];
+    home.packages = with pkgs; [
+        swayosd
+        hyprpaper
+    ];
+
     services.swayosd.enable = true;
     services.hyprpaper.enable = true;
 
@@ -34,8 +40,8 @@
             ];
 
             general = {
-                gaps_in = 5;
-                gaps_out = 5;
+                gaps_in = 4;
+                gaps_out = 8;
                 border_size = 2;
                 "col.active_border" = lib.mkForce "rgba(efc569ff)";
                 resize_on_border = false;
