@@ -11,6 +11,7 @@
     home.packages = with pkgs; [
         swayosd
         hyprpaper
+        hyprshot
     ];
 
     services.swayosd.enable = true;
@@ -147,6 +148,11 @@
                 "$mainMod, R, exec, $menu"
                 "$mainMod, V, togglesplit, # dwindle"
                 "$mainMod Shift, V, togglefloating,"
+
+                # Screenshoting 
+                ", PRINT, exec, hyprshot -m output"
+                "Shift, PRINT, exec, hyprshot -m window -m active"
+                "Control, PRINT, exec, hyprshot -m region"
 
                 # Move focus with mainMod + h, j, k, l
                 "$mainMod, h, movefocus, l"
