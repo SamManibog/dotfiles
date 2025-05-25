@@ -160,17 +160,11 @@
                 "$mainMod, k, movefocus, u"
                 "$mainMod, l, movefocus, r"
 
-                # Move window with mainMod Shift + h, j, k, l
-                "$mainMod Shift, h, movewindow, l"
-                "$mainMod Shift, j, movewindow, d"
-                "$mainMod Shift, k, movewindow, u"
-                "$mainMod Shift, l, movewindow, r"
-
-                # Resize window with mainMod Shift + h, j, k, l
-                "$mainMod Control, h, resizeactive, -10 0"
-                "$mainMod Control, j, resizeactive, 0 10"
-                "$mainMod Control, k, resizeactive, 0 -10"
-                "$mainMod Control, l, resizeactive, 10 0"
+                # Move window with mainMod control + h, j, k, l
+                "$mainMod Control, h, movewindow, l"
+                "$mainMod Control, j, movewindow, d"
+                "$mainMod Control, k, movewindow, u"
+                "$mainMod Control, l, movewindow, r"
 
                 # Switch workspaces with mainMod + [1-9]
                 "$mainMod, 1, workspace, 1"
@@ -199,29 +193,41 @@
                 "$mainMod, mouse_up, workspace, e-1"
             ];
 
-            # Move/resize windows with mainMod + LMB/RMB and dragging
+            binde = [
+                # Resize window with mainMod shift + h, j, k, l
+                "$mainMod Shift, h, resizeactive, -10 0"
+                "$mainMod Shift, j, resizeactive, 0 10"
+                "$mainMod Shift, k, resizeactive, 0 -10"
+                "$mainMod Shift, l, resizeactive, 10 0"
+            ];
+
             bindm = [
+                # Move window with mainMod and dragging
                 "$mainMod, mouse:272, movewindow"
+
+                # Resize window with mainMod Shift and dragging
                 "$mainMod + Shift, mouse:272, resizewindow"
             ];
 
-            # Laptop multimedia keys for volume and LCD brightness
             bindel = [
+                # Output volume
                 ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
                 ",XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
                 ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
 
+                # Brightness
                 ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
                 ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
 
+                # Input volume
                 "Alt, XF86AudioRaiseVolume, exec, swayosd-client --input-volume raise"
                 "Alt, XF86AudioLowerVolume, exec, swayosd-client --input-volume lower"
                 "Alt, XF86AudioMute, exec, swayosd-client --input-volume mute-toggle"
                 ",XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
             ];
 
-            # Requires playerctl
             bindl = [
+                # Music controls (requires playerctl)
                 ", XF86AudioNext, exec, playerctl next"
                 ", XF86AudioPause, exec, playerctl play-pause"
                 ", XF86AudioPlay, exec, playerctl play-pause"
