@@ -139,6 +139,8 @@
             };
             
             bind = [
+                "$mainMod Control, R, exec, pkill waybar; waybar"
+
                 "$mainMod, Return, exec, $terminal"
                 "$mainMod, I, exec, firefox"
                 "$mainMod, Q, killactive,"

@@ -13,4 +13,5 @@
             scrollback_lines = 5000;
         };
     };
+    home.sessionVariables.TERMINAL = "kitty";
 }

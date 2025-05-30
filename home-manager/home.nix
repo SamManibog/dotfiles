@@ -37,6 +37,18 @@
             pwvucontrol
             gimp3-with-plugins
         ];
+
+        sessionVariables = {
+            EDITOR = "nvim";
+            BROWSER = "firefox";
+            ProjectLocations = "~/Projects";
+        };
+
+        activation = {
+            init = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+            mkdir ~/Projects
+            '';
+        };
     };
 
     xdg.enable = true;

@@ -6,41 +6,41 @@
 
         settings.mainBar = {
             layer = "bottom";
-            modules-left = ["battery" "cpu" "memory" "pulseaudio#in" "pulseaudio#out"];
+            modules-left = [ "battery" "cpu" "memory" "pulseaudio#out" "pulseaudio#in" ];
             modules-center = ["hyprland/workspaces"];
-            modules-right =  ["tray" "clock"];
+            modules-right =  ["idle_inhibitor" "tray" "clock"];
 
             battery = {
                 format = "{capacity}% {icon}";
-                format-icons = ["" "" "" "" ""];
-                tooltip-format = "{time} remaining"; };
+                #format = "BAT: {capacity}";
+                format-icons = [ "" "" "" "" "" ];
+                tooltip-format = "{time} remaining";
                 interval = 10;
-            clock = {
-                format = "{:%A %b %d, %Y - %I:%M:%S}";
-                interval = 1;
-                tooltip = false;
             };
-            "hyprland/workspaces" = {
-                format = "{icon}{id}{icon}";
-                format-icons = {
-                    default = "";
-                    active = "-";
-                };
-                persistent-workspaces = {
-                    "*" = 9;
-                };
+            cpu = {
+                format = "{usage}% ";
+                #format = "CPU: {usage}";
+                interval = 10;
             };
+            memory = {
+                format = "{percentage}% ";
+                #format = "MEM: {percentage}";
+                interval = 10;
+            };
+
             "pulseaudio#out" = {
                 on-click = "pwvucontrol";
                 format = "{volume}% {icon}";
                 format-bluetooth = "{volume}% {icon}";
                 format-muted = "0% 󰝟";
+                #format = "VOL: {volume}";
+                #format-muted = "VOL: MUT";
                 format-icons = {
                     headphones = "";
                     headphones-muted = "󰟎";
                     phone = "";
                     phone-muted = "";
-                    default = ["" "" ""];
+                    default = "";
                     default-muted = "󰝟";
                 };
                 scroll-step = 0;
@@ -50,21 +50,143 @@
                 format = "{format_source}";
                 format-source = "{volume}% 󰍬";
                 format-source-muted = "0% 󰍭";
+                #format-source = "MIC: {volume}";
+                #format-source-muted = "MIC: MUT";
                 scroll-step = 0;
             };
-            memory = {
-                format = "{percentage}% ";
-                interval = 10;
+
+            idle_inhibitor = {
+                format = "{icon}";
+                format-icons = {
+                    activated = "󱙱";
+                    deactivated = "󰌾";
+                };
+                tooltip-format-activated = "Lockscreen Disabled";
+                tooltip-format-deactivated = "Lockscreen Enabled";
             };
-            cpu = {
-                format = "{usage}% ";
-                interval = 10;
+
+            clock = {
+                format = "{:%A %b %d, %Y - %I:%M:%S}";
+                interval = 1;
+                tooltip = false;
             };
+            "hyprland/workspaces" = {
+                format = "{id}";
+                persistent-workspaces = {
+                    "*" = 9;
+                };
+            };
+
             tray = {
-                icon-size = 20;
-                spacing = 10;
+                icon-size = 12;
+                spacing = 4;
+                reverse-direction = true;
+                show-passive-items = true;
             };
         };
+
+/*-------------------------------------------------
+* Waybar style
+*-----------------------------------------------*/
+        style = /*css*/ ''
+* {
+    font-family: FontAwesome, Roboto;
+    font-weight: normal;
+    font-size: 12px;
+    min-height: 0px;
+    min-width: 0px;
+}
+
+window#waybar {
+    background-color: black;
+}
+
+/*-------------------------------------------------
+* Center Module
+*-----------------------------------------------*/
+
+#workspaces button {
+    background-color: blue;
+    border-radius: 0px;
+    padding: 0px 4px;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#workspaces button:nth-child(1) {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding-left: 7px;
+}
+
+#workspaces button:nth-last-child(1) {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding-right: 7px;
+}
+
+#workspaces button.active {
+    background-color: red;
+}
+
+/*-------------------------------------------------
+* LEFT MODULES
+*-----------------------------------------------*/
+
+.modules-left > :nth-last-child(1) > * {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.modules-left > :nth-child(odd) > * {
+    background-color: blue
+}
+
+.modules-left > :nth-child(even) > * {
+    background-color: red
+}
+
+#cpu, #memory, #battery, #pulseaudio {
+    padding: 0px 8px;
+}
+
+#cpu {
+    padding-right: 12px;
+}
+
+#memory {
+    padding-right: 14px;
+}
+
+#pulseaudio.module.out {
+    padding-right: 11px;
+}
+
+#pulseaudio.module.in {
+    padding-right: 9px;
+}
+
+/*-------------------------------------------------
+* RIGHT MODULES
+*-----------------------------------------------*/
+
+.modules-right {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    background-color: blue;
+    padding-right: 8px;
+}
+
+#tray {
+    padding: 0px 8px;
+}
+
+#idle_inhibitor {
+    padding: 0px;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+        '';
     };
 
     stylix.targets.waybar.enable = false;

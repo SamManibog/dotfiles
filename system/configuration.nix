@@ -11,14 +11,14 @@
             ./modules/hyprland.nix
             ./modules/wayland.nix
             ./modules/pipewire.nix
-
-            ./modules/sddm.nix
-            #./modules/regreet.nix
-
             ./modules/fonts.nix
             ./modules/networking.nix
             ./modules/automount.nix
             ./modules/plymouth.nix
+            ./modules/upower.nix
+
+            ./modules/sddm.nix
+            #./modules/regreet.nix
 
             ../themes/stylix.nix
 
@@ -98,6 +98,11 @@
 
         # wget
     ];
+    environment.variables = {
+        EDITOR = "nvim";
+        BROWSER = "firefox";
+        TERMINAL = "kitty";
+    };
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
