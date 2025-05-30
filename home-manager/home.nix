@@ -10,6 +10,7 @@
         ./modules/bash.nix
         ./modules/wofi.nix
         ./modules/kitty.nix
+        ./modules/yazi.nix
 
         ../themes/stylix.nix
     ];
@@ -36,6 +37,7 @@
             btop
             pwvucontrol
             gimp3-with-plugins
+            wl-clipboard
         ];
 
         sessionVariables = {
