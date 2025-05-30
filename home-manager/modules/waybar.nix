@@ -88,9 +88,6 @@ in
             };
         };
 
-/*-------------------------------------------------
-* Waybar style
-*-----------------------------------------------*/
         style = /*css*/ ''
 * {
     min-height: 0px;
@@ -166,8 +163,12 @@ window#waybar {
             + /*css*/'' 1.0);
 }
 
-#cpu, #memory, #battery, #pulseaudio {
+#cpu, #memory, #battery, #pulseaudio, #custom-system {
     padding: 0px 8px;
+}
+
+#battery {
+    padding-right: 14px;
 }
 
 #cpu {

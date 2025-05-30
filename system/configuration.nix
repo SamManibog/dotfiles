@@ -80,6 +80,12 @@
     # $ nix search wget
     environment.systemPackages = with pkgs; [
         home-manager
+
+        # mount MTP devices
+        # usage: jmtpfs [mount point] <- mounts device
+        #        fusermount -u [mount point] <- unmounts device
+        jmtpfs
+
         #DE
         neovim
         xarchiver

@@ -199,10 +199,10 @@
 
             binde = [
                 # Resize window with mainMod shift + h, j, k, l
-                "$mainMod Shift, h, resizeactive, -10 0"
-                "$mainMod Shift, j, resizeactive, 0 10"
-                "$mainMod Shift, k, resizeactive, 0 -10"
-                "$mainMod Shift, l, resizeactive, 10 0"
+                "$mainMod Shift, h, resizeactive, -30 0"
+                "$mainMod Shift, j, resizeactive, 0 30"
+                "$mainMod Shift, k, resizeactive, 0 -30"
+                "$mainMod Shift, l, resizeactive, 30 0"
             ];
 
             bindm = [
@@ -236,6 +236,12 @@
                 ", XF86AudioPause, exec, playerctl play-pause"
                 ", XF86AudioPlay, exec, playerctl play-pause"
                 ", XF86AudioPrev, exec, playerctl previous"
+
+                # Logout-like binds
+                "$mainMod Alt, Q, exec, shutdown now"
+                "$mainMod Alt, L, exec, hyprlock --immediate"
+                "$mainMod Alt, S, exec, systemctl suspend"
+                "$mainMod Alt, R, exec, reboot"
             ];
 
         };

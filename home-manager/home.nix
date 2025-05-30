@@ -11,6 +11,7 @@
         ./modules/wofi.nix
         ./modules/kitty.nix
         ./modules/yazi.nix
+        ./modules/wlogout.nix
 
         ../themes/stylix.nix
     ];
