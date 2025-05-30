@@ -11,7 +11,12 @@
             confirm_os_window_close = 0;
             enable_audio_bell = "no";
             scrollback_lines = 5000;
+
+            cursor_shape = "block";
+            cursor_shape_unfocused = "block";
+            cursor_stop_blinking_after = 0;
         };
+        shellIntegration.mode = "no-cursor";
     };
     home.sessionVariables.TERMINAL = "kitty";
 }

@@ -31,7 +31,6 @@
             monitor = ",preferred,auto,auto";
 
             exec-once = [
-                "$terminal"
                 "waybar"
             ];
 
@@ -54,7 +53,7 @@
             decoration = {
                 rounding = 0;
                 active_opacity = 1.0;
-                inactive_opacity = 1.0;
+                inactive_opacity = 0.8;
 
                 shadow  = {
                     enabled = true;
@@ -70,6 +69,9 @@
                 };
             };
 
+            windowrulev2 = [
+                "opacity 0.95 0.8,class:^(kitty)$"
+            ];
 
             animations = {
                 enabled = true;
