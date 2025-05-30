@@ -1,5 +1,8 @@
 { inputs, lib, config, pkgs, ... }:
 
+let
+    colors = config.lib.stylix.colors;
+in
 {
     programs.waybar = {
         enable = true;
@@ -90,15 +93,24 @@
 *-----------------------------------------------*/
         style = /*css*/ ''
 * {
+    min-height: 0px;
+    min-width: 0px;
     font-family: FontAwesome, Roboto;
     font-weight: normal;
     font-size: 12px;
-    min-height: 0px;
-    min-width: 0px;
+    color: rgba('' 
+        + colors.base05-rgb-r + ","
+        + colors.base05-rgb-g + ","
+        + colors.base05-rgb-b + ","
+            + /*css*/'' 1.0);
 }
 
 window#waybar {
-    background-color: black;
+    background-color: rgba('' 
+        + colors.base00-rgb-r + ","
+        + colors.base00-rgb-g + ","
+        + colors.base00-rgb-b + ","
+            + /*css*/'' 0.7);
 }
 
 /*-------------------------------------------------
@@ -106,7 +118,11 @@ window#waybar {
 *-----------------------------------------------*/
 
 #workspaces button {
-    background-color: blue;
+    background-color:  rgba('' 
+        + colors.base01-rgb-r + ","
+        + colors.base01-rgb-g + ","
+        + colors.base01-rgb-b + ","
+            + /*css*/'' 1.0);
     border-radius: 0px;
     padding: 0px 4px;
     font-weight: normal;
@@ -126,7 +142,11 @@ window#waybar {
 }
 
 #workspaces button.active {
-    background-color: red;
+    background-color:  rgba('' 
+        + colors.base0D-rgb-r + ","
+        + colors.base0D-rgb-g + ","
+        + colors.base0D-rgb-b + ","
+            + /*css*/'' 1.0);
 }
 
 /*-------------------------------------------------
@@ -138,12 +158,12 @@ window#waybar {
     border-bottom-right-radius: 100px;
 }
 
-.modules-left > :nth-child(odd) > * {
-    background-color: blue
-}
-
-.modules-left > :nth-child(even) > * {
-    background-color: red
+.modules-left > * > * {
+    background-color:  rgba('' 
+        + colors.base01-rgb-r + ","
+        + colors.base01-rgb-g + ","
+        + colors.base01-rgb-b + ","
+            + /*css*/'' 1.0);
 }
 
 #cpu, #memory, #battery, #pulseaudio {
@@ -173,7 +193,11 @@ window#waybar {
 .modules-right {
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
-    background-color: blue;
+    background-color:  rgba('' 
+        + colors.base01-rgb-r + ","
+        + colors.base01-rgb-g + ","
+        + colors.base01-rgb-b + ","
+            + /*css*/'' 1.0);
     padding-right: 8px;
 }
 
