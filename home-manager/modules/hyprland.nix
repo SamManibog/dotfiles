@@ -14,6 +14,13 @@
         hyprshot
     ];
 
+    home.pointerCursor = {
+        name = "phinger-cursors-dark";
+        package = pkgs.phinger-cursors;
+        size = 24;
+        gtk.enable = true;
+    };
+
     services.swayosd.enable = true;
     services.hyprpaper.enable = true;
 
@@ -36,7 +43,10 @@
 
             env = [
                 "XCURSOR_SIZE, 24"
+                "XCURSOR_THEME, phinger-cursors-dark"
+
                 "HYPRCURSOR_SIZE, 24"
+                "HYPRCURSOR_THEME, phinger-cursors-dark"
             ];
 
             general = {
@@ -69,9 +79,11 @@
                 };
             };
 
+            /*
             windowrulev2 = [
                 "opacity 0.95 0.8,class:^(kitty)$"
             ];
+            */
 
             animations = {
                 enabled = true;
