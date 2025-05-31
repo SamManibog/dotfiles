@@ -253,10 +253,10 @@
 
                 # Logout-like binds
                 "$mainMod Alt, Q, exec, shutdown now"
-                "$mainMod Alt, L, exec, hyprlock --immediate"
                 "$mainMod Alt, S, exec, systemctl suspend"
                 "$mainMod Alt, R, exec, reboot"
                 "$mainMod Alt, U, exec, hyprctl dispatch exit"
+                "$mainMod Alt, L, exec, hyprlock --immediate"
             ];
 
         };

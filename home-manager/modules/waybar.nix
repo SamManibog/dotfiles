@@ -9,9 +9,50 @@ in
 
         settings.mainBar = {
             layer = "bottom";
-            modules-left = [ "battery" "cpu" "memory" "pulseaudio#out" "pulseaudio#in" ];
+            modules-left = [ "group/power" "battery" "cpu" "memory" "pulseaudio#out" "pulseaudio#in" ];
             modules-center = ["hyprland/workspaces"];
             modules-right =  ["idle_inhibitor" "tray" "clock"];
+
+            "group/power" = {
+                orientation = "horizontal";
+                drawer = {
+                    transition-duration = "250";
+                    children-class = "powerIcon";
+                    transition-left-to-right = "true";
+                };
+                modules = [
+                    "custom/shutdown"
+                    "custom/reboot"
+                    "custom/sleep"
+                    "custom/logout"
+                    "custom/lock"
+                ];
+            };
+            "custom/shutdown" = {
+                format = "";
+                tooltip = false;
+                on-click = "shutdown now";
+            };
+            "custom/reboot" = {
+                format = "";
+                tooltip = false;
+                on-click = "reboot";
+            };
+            "custom/sleep" = {
+                format = "󰤄";
+                tooltip = false;
+                on-click = "systemctl suspend";
+            };
+            "custom/logout" = {
+                format = "󰍃";
+                tooltip = false;
+                on-click = "hyprctl dispatch exit";
+            };
+            "custom/lock" = {
+                format = "󰍁";
+                tooltip = false;
+                on-click = "hyprlock --immediate";
+            };
 
             battery = {
                 format = "{capacity}% {icon}";
@@ -55,6 +96,7 @@ in
                 format-source-muted = "0% 󰍭";
                 #format-source = "MIC: {volume}";
                 #format-source-muted = "MIC: MUT";
+                tooltip = false;
                 scroll-step = 0;
             };
 
@@ -161,6 +203,28 @@ window#waybar {
         + colors.base01-rgb-g + ","
         + colors.base01-rgb-b + ","
             + /*css*/'' 1.0);
+}
+
+.modules-left > :nth-child(1) { /*for power module*/
+    background-color:  rgba('' 
+        + colors.base01-rgb-r + ","
+        + colors.base01-rgb-g + ","
+        + colors.base01-rgb-b + ","
+            + /*css*/'' 1.0);
+}
+
+#power {
+    background-color:  rgba('' 
+        + colors.base03-rgb-r + ","
+        + colors.base03-rgb-g + ","
+        + colors.base03-rgb-b + ","
+            + /*css*/'' 1.0);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+#custom-shutdown, #custom-reboot, #custom-sleep, #custom-logout, #custom-lock {
+    padding: 0px 8px;
 }
 
 #cpu, #memory, #battery, #pulseaudio, #custom-system {
