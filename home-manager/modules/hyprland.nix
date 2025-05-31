@@ -22,7 +22,6 @@
     };
 
     services.swayosd.enable = true;
-    services.hyprpaper.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
@@ -38,6 +37,7 @@
             monitor = ",preferred,auto,auto";
 
             exec-once = [
+                "hyprpaper"
                 "waybar"
             ];
 
@@ -129,6 +129,8 @@
             misc = {
                 force_default_wallpaper = 0;
                 disable_hyprland_logo = true;
+                disable_splash_rendering = true;
+                background_color = lib.mkForce "rgb(000000)";
             };
 
             input = {
@@ -254,6 +256,7 @@
                 "$mainMod Alt, L, exec, hyprlock --immediate"
                 "$mainMod Alt, S, exec, systemctl suspend"
                 "$mainMod Alt, R, exec, reboot"
+                "$mainMod Alt, U, exec, hyprctl dispatch exit"
             ];
 
         };

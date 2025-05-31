@@ -44,7 +44,7 @@
         sessionVariables = {
             EDITOR = "nvim";
             BROWSER = "firefox";
-            ProjectLocations = "~/Projects";
+            ProjectLocations = "/home/sam/Projects";
         };
 
         activation = {
