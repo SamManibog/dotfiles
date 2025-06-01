@@ -6,7 +6,7 @@
 
         autoEnable = true;
         image = ../assets/warm_mountain.png;
-        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
+        base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
 
         fonts = {
             serif = {
