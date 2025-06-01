@@ -152,7 +152,7 @@ window#waybar {
         + colors.base00-rgb-r + ","
         + colors.base00-rgb-g + ","
         + colors.base00-rgb-b + ","
-            + /*css*/'' 0.7);
+            + /*css*/'' 1.0);
 }
 
 /*-------------------------------------------------
