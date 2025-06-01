@@ -137,6 +137,9 @@ in
     font-family: FontAwesome, Roboto;
     font-weight: normal;
     font-size: 12px;
+}
+
+window {
     color: rgba('' 
         + colors.base05-rgb-r + ","
         + colors.base05-rgb-g + ","
@@ -182,9 +185,14 @@ window#waybar {
 
 #workspaces button.active {
     background-color:  rgba('' 
-        + colors.base0D-rgb-r + ","
-        + colors.base0D-rgb-g + ","
-        + colors.base0D-rgb-b + ","
+        + colors.base05-rgb-r + ","
+        + colors.base05-rgb-g + ","
+        + colors.base05-rgb-b + ","
+            + /*css*/'' 1.0);
+    color:  rgba('' 
+        + colors.base00-rgb-r + ","
+        + colors.base00-rgb-g + ","
+        + colors.base00-rgb-b + ","
             + /*css*/'' 1.0);
 }
 
@@ -215,9 +223,9 @@ window#waybar {
 
 #power {
     background-color:  rgba('' 
-        + colors.base03-rgb-r + ","
-        + colors.base03-rgb-g + ","
-        + colors.base03-rgb-b + ","
+        + colors.base02-rgb-r + ","
+        + colors.base02-rgb-g + ","
+        + colors.base02-rgb-b + ","
             + /*css*/'' 1.0);
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;

@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+    colors = config.lib.stylix.colors;
+in
 {
     imports = [
         ./wofi.nix
@@ -53,7 +56,8 @@
                 gaps_in = 4;
                 gaps_out = 8;
                 border_size = 2;
-                "col.active_border" = lib.mkForce "rgba(efc569ff)";
+                "col.active_border" = lib.mkForce "rgb(${colors.base0C})";
+                "col.inactive_border" = lib.mkForce "rgb(${colors.base02})";
                 resize_on_border = false;
                 allow_tearing = false;
                 layout = "dwindle";
