@@ -8,6 +8,13 @@
         image = ../assets/warm_mountain.png;
         base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-soft.yaml";
 
+        iconTheme = {
+            enable = true;
+            package = pkgs.gruvbox-plus-icons;
+            light = "Gruvbox-Plus-Dark";
+            dark = "Gruvbox-Plus-Dark";
+        };
+
         fonts = {
             serif = {
                 package = pkgs.paratype-pt-serif;

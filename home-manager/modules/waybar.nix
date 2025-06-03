@@ -160,6 +160,11 @@ window#waybar {
 *-----------------------------------------------*/
 
 #workspaces button {
+    color: rgba('' 
+        + colors.base05-rgb-r + ","
+        + colors.base05-rgb-g + ","
+        + colors.base05-rgb-b + ","
+            + /*css*/'' 1.0);
     background-color:  rgba('' 
         + colors.base01-rgb-r + ","
         + colors.base01-rgb-g + ","
@@ -275,13 +280,14 @@ window#waybar {
 }
 
 #tray {
-    padding: 0px 8px;
+    padding-right: 8px;
+    padding-left: 3px;
 }
 
 #idle_inhibitor {
     padding: 0px;
     padding-left: 12px;
-    padding-right: 4px;
+    padding-right: 6px;
 }
         '';
     };

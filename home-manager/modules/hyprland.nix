@@ -33,7 +33,7 @@ in
         settings = {
             # Variables
             "$terminal" = "kitty";
-            "$fileManager" = "nautilus";
+            "$fileManager" = "nautilus --new-window";
             "$menu" = "pkill wofi; wofi --show drun -i -b -n -a";
             "$mainMod" = "SUPER";
 
@@ -53,8 +53,8 @@ in
             ];
 
             general = {
-                gaps_in = 4;
-                gaps_out = 8;
+                gaps_in = 2;
+                gaps_out = 4;
                 border_size = 2;
                 "col.active_border" = lib.mkForce "rgb(${colors.base0C})";
                 "col.inactive_border" = lib.mkForce "rgb(${colors.base02})";
@@ -83,11 +83,9 @@ in
                 };
             };
 
-            /*
             windowrulev2 = [
-                "opacity 0.95 0.8,class:^(kitty)$"
+                
             ];
-            */
 
             animations = {
                 enabled = true;
