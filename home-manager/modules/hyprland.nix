@@ -84,8 +84,8 @@ in
             };
 
             windowrule = [
-                "pin, class:(.blueman-manager-wrapped|nm-connection-editor)"
-                "float, class:(.blueman-manager-wrapped|nm-connection-editor)"
+                "pin, class:(.blueman-manager-wrapped|nm-connection-editor|wofi)"
+                "float, class:(.blueman-manager-wrapped|nm-connection-editor|wofi)"
             ];
 
             animations = {
