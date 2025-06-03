@@ -83,8 +83,9 @@ in
                 };
             };
 
-            windowrulev2 = [
-                
+            windowrule = [
+                "pin, class:(.blueman-manager-wrapped|nm-connection-editor)"
+                "float, class:(.blueman-manager-wrapped|nm-connection-editor)"
             ];
 
             animations = {

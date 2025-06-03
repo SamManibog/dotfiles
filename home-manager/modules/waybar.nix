@@ -166,14 +166,22 @@ window#waybar {
         + colors.base05-rgb-b + ","
             + /*css*/'' 1.0);
     background-color:  rgba('' 
-        + colors.base01-rgb-r + ","
-        + colors.base01-rgb-g + ","
-        + colors.base01-rgb-b + ","
+        + colors.base02-rgb-r + ","
+        + colors.base02-rgb-g + ","
+        + colors.base02-rgb-b + ","
             + /*css*/'' 1.0);
     border-radius: 0px;
     padding: 0px 4px;
     font-weight: normal;
     font-size: 12px;
+}
+
+#workspaces button.empty {
+    background-color:  rgba('' 
+        + colors.base01-rgb-r + ","
+        + colors.base01-rgb-g + ","
+        + colors.base01-rgb-b + ","
+            + /*css*/'' 1.0);
 }
 
 #workspaces button:nth-child(1) {
