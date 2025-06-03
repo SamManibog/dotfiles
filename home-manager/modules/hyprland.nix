@@ -15,6 +15,7 @@ in
         swayosd
         hyprpaper
         hyprshot
+        hyprsunset
     ];
 
     home.pointerCursor = {
@@ -26,6 +27,7 @@ in
 
     services.cliphist.enable = true;
     services.swayosd.enable = true;
+    services.hyprpolkitagent.enable = true;
 
     wayland.windowManager.hyprland = {
         enable = true;
@@ -43,6 +45,7 @@ in
             exec-once = [
                 "hyprpaper"
                 "waybar"
+                "hyprsunset -i"
             ];
 
             env = [
@@ -240,6 +243,12 @@ in
                 # Brightness
                 ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
                 ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+
+                # Nightmode
+                "Alt, XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +5"
+                "Alt, XF86MonBrightnessDown, exec, hyprctl hyprsunset gamma -5"
+                "Control Alt, XF86MonBrightnessUp, exec, hyprctl hyprsunset identity"
+                "Control Alt, XF86MonBrightnessDown, exec, hyprctl hyprsunset identity"
 
                 # Input volume
                 "Alt, XF86AudioRaiseVolume, exec, swayosd-client --input-volume raise"
