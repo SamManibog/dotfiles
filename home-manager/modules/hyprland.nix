@@ -245,8 +245,8 @@ in
                 ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
 
                 # Nightmode
-                "Alt, XF86MonBrightnessUp, exec, hyprctl hyprsunset gamma +5"
-                "Alt, XF86MonBrightnessDown, exec, hyprctl hyprsunset gamma -5"
+                "Alt, XF86MonBrightnessUp, exec, hyprctl hyprsunset temperature -100"
+                "Alt, XF86MonBrightnessDown, exec, hyprctl hyprsunset temperature +100"
                 "Control Alt, XF86MonBrightnessUp, exec, hyprctl hyprsunset identity"
                 "Control Alt, XF86MonBrightnessDown, exec, hyprctl hyprsunset identity"
 
