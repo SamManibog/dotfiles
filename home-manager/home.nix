@@ -12,6 +12,7 @@
         ./modules/kitty.nix
         ./modules/yazi.nix
         ./modules/wlogout.nix
+        ./modules/btop.nix
 
         ../themes/stylix.nix
     ];
@@ -35,7 +36,6 @@
 
         packages = with pkgs; [
             neofetch
-            btop
             pwvucontrol
             gimp3-with-plugins
             wl-clipboard

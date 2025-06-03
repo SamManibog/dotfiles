@@ -56,20 +56,19 @@ in
 
             battery = {
                 format = "{capacity}% {icon}";
-                #format = "BAT: {capacity}";
                 format-icons = [ "" "" "" "" "" ];
                 tooltip-format = "{time} remaining";
                 interval = 10;
             };
             cpu = {
                 format = "{usage}% ";
-                #format = "CPU: {usage}";
                 interval = 10;
+                on-click = "kitty -e btop -p 1";
             };
             memory = {
                 format = "{percentage}% ";
-                #format = "MEM: {percentage}";
                 interval = 10;
+                on-click = "kitty -e btop -p 2";
             };
 
             "pulseaudio#out" = {
@@ -77,8 +76,6 @@ in
                 format = "{volume}% {icon}";
                 format-bluetooth = "{volume}% {icon}";
                 format-muted = "0% 󰝟";
-                #format = "VOL: {volume}";
-                #format-muted = "VOL: MUT";
                 format-icons = {
                     headphones = "";
                     headphones-muted = "󰟎";
@@ -94,8 +91,6 @@ in
                 format = "{format_source}";
                 format-source = "{volume}% 󰍬";
                 format-source-muted = "0% 󰍭";
-                #format-source = "MIC: {volume}";
-                #format-source-muted = "MIC: MUT";
                 tooltip = false;
                 scroll-step = 0;
             };
