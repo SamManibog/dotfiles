@@ -44,7 +44,8 @@ in
         settings = {
             # Variables
             "$terminal" = "kitty";
-            "$fileManager" = "nautilus --new-window";
+            "$fileManager" = "kitty --hold yazi";
+            "$fileManagerAlt" = "nautilus --new-window";
             "$menu" = "pkill wofi; wofi --show drun -i -b -n -a";
             #"$menu" = "tofi-drun | xargs hyprctl dispatch exec --";
             "$mainMod" = "SUPER";
@@ -178,6 +179,7 @@ in
                 "$mainMod, Q, killactive,"
                 "$mainMod Shift Control, Q, forcekillactive,"
                 "$mainMod, E, exec, $fileManager"
+                "$mainMod Shift, E, exec, $fileManagerAlt"
                 "$mainMod, F, Fullscreen,"
                 "$mainMod, R, exec, $menu"
                 "$mainMod, V, togglesplit, # dwindle"
