@@ -18,5 +18,7 @@
         };
         shellIntegration.mode = "no-cursor";
     };
-    home.sessionVariables.TERMINAL = "kitty";
+
+    home.sessionVariables.TERMINAL = lib.mkForce "kitty";
+    home.sessionVariables.TERM = lib.mkForce "kitty";
 }

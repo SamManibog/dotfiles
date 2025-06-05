@@ -8,7 +8,7 @@
         ./modules/waybar.nix
         ./modules/hyprland.nix
         ./modules/bash.nix
-        ./modules/wofi.nix
+        ./modules/tofi.nix
         ./modules/kitty.nix
         ./modules/yazi.nix
         ./modules/wlogout.nix

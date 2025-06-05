@@ -16,6 +16,7 @@
             ./modules/automount.nix
             ./modules/plymouth.nix
             ./modules/upower.nix
+            ./modules/kitty.nix
 
             ./modules/sddm.nix
             #./modules/regreet.nix
@@ -67,12 +68,6 @@
     # Web Browser (firefox)
     programs.firefox.enable = true;
 
-    # File Explorer (Nautilus)
-    programs.nautilus-open-any-terminal = {
-        enable = true;
-        terminal = "kitty";
-    };
-
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -93,7 +88,6 @@
         nautilus
         nwg-look
         brightnessctl
-        kitty
 
         #utils
         unzip
@@ -107,7 +101,6 @@
     environment.variables = {
         EDITOR = "nvim";
         BROWSER = "firefox";
-        TERMINAL = "kitty";
     };
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];

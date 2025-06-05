@@ -4,11 +4,19 @@ let
     colors = config.lib.stylix.colors;
 in
 {
+    stylix.iconTheme = {
+        enable = true;
+        package = pkgs.gruvbox-plus-icons;
+        light = "Gruvbox-Plus-Dark";
+        dark = "Gruvbox-Plus-Dark";
+    };
+
     imports = [
         ./wofi.nix
         ./waybar.nix
         ./hyprlock.nix
         ./hypridle.nix
+        ./kitty.nix
     ];
 
     home.packages = with pkgs; [
@@ -38,6 +46,7 @@ in
             "$terminal" = "kitty";
             "$fileManager" = "nautilus --new-window";
             "$menu" = "pkill wofi; wofi --show drun -i -b -n -a";
+            #"$menu" = "tofi-drun | xargs hyprctl dispatch exec --";
             "$mainMod" = "SUPER";
 
             monitor = ",preferred,auto,auto";
