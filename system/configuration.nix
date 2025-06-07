@@ -83,20 +83,23 @@
 
         #DE
         neovim
-        xarchiver
         networkmanagerapplet
         nautilus
-        nwg-look
         brightnessctl
 
         #utils
+        p7zip
         unzip
 
-        # c/c++ programming
-        gcc
+        # Development
+        cmake
+        libgcc
         ninja
+        rustup
+        lua
+        python314
 
-        # wget
+        wget
     ];
     environment.variables = {
         EDITOR = "nvim";

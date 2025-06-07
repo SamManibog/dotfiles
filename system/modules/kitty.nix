@@ -11,7 +11,6 @@
         TERMINAL = "kitty";
     };
 
-
     xdg.terminal-exec = {
         enable = true;
         settings = {
