@@ -63,12 +63,12 @@ in
             cpu = {
                 format = "{usage}% ";
                 interval = 10;
-                on-click = "kitty -e btop -p 1";
+                on-click = "kitty --hold -e btop -p 1";
             };
             memory = {
                 format = "{percentage}% ";
                 interval = 10;
-                on-click = "kitty -e btop -p 2";
+                on-click = "kitty --hold -e btop -p 2";
             };
 
             "pulseaudio#out" = {

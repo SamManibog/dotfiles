@@ -54,18 +54,21 @@
         };
     };
 
-    xdg.enable = true;
-    xdg.userDirs = {
+    xdg = {
         enable = true;
-        createDirectories = true;
-        music = "${config.home.homeDirectory}/Music";
-        videos = "${config.home.homeDirectory}/Videos";
-        pictures = "${config.home.homeDirectory}/Pictures";
-        templates = "${config.home.homeDirectory}/Templates";
-        download = "${config.home.homeDirectory}/Downloads";
-        documents = "${config.home.homeDirectory}/Documents";
-        desktop = "${config.home.homeDirectory}/Desktop";
-        publicShare = "${config.home.homeDirectory}/Desktop";
+        userDirs = {
+            enable = true;
+            createDirectories = true;
+            music = "${config.home.homeDirectory}/Music";
+            videos = "${config.home.homeDirectory}/Videos";
+            pictures = "${config.home.homeDirectory}/Pictures";
+            templates = "${config.home.homeDirectory}/Templates";
+            download = "${config.home.homeDirectory}/Downloads";
+            documents = "${config.home.homeDirectory}/Documents";
+            desktop = "${config.home.homeDirectory}/Desktop";
+            publicShare = "${config.home.homeDirectory}/Desktop";
+
+        };
     };
 
     programs.git = {
