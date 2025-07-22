@@ -81,7 +81,7 @@ in
             decoration = {
                 rounding = 0;
                 active_opacity = 1.0;
-                inactive_opacity = 0.8;
+                inactive_opacity = 0.9;
 
                 shadow  = {
                     enabled = true;
@@ -173,7 +173,7 @@ in
             
             bind = [
                 "$mainMod Control, R, exec, pkill waybar; waybar"
-                "$mainMod Shift, R, exec, nm-applet & waybar"
+                "$mainMod Shift, R, exec, nm-applet & blueman-applet"
 
                 "$mainMod, Return, exec, $terminal"
                 "$mainMod, I, exec, firefox"
@@ -203,7 +203,7 @@ in
                 "$mainMod Control, k, movewindow, u"
                 "$mainMod Control, l, movewindow, r"
 
-                # Switch workspaces with mainMod + [1-9]
+                # Switch workspaces with mainMod + [0-9]
                 "$mainMod, 1, workspace, 1"
                 "$mainMod, 2, workspace, 2"
                 "$mainMod, 3, workspace, 3"
@@ -213,8 +213,9 @@ in
                 "$mainMod, 7, workspace, 7"
                 "$mainMod, 8, workspace, 8"
                 "$mainMod, 9, workspace, 9"
+                "$mainMod, 0, workspace, 10"
 
-                # Move active window to a workspace with mainMod + SHIFT + [1-9]
+                # Move active window to a workspace with mainMod + SHIFT + [0-9]
                 "$mainMod SHIFT, 1, movetoworkspace, 1"
                 "$mainMod SHIFT, 2, movetoworkspace, 2"
                 "$mainMod SHIFT, 3, movetoworkspace, 3"
@@ -224,6 +225,7 @@ in
                 "$mainMod SHIFT, 7, movetoworkspace, 7"
                 "$mainMod SHIFT, 8, movetoworkspace, 8"
                 "$mainMod SHIFT, 9, movetoworkspace, 9"
+                "$mainMod SHIFT, 0, movetoworkspace, 10"
 
                 # Scroll through existing workspaces with mainMod + scroll
                 "$mainMod, mouse_down, workspace, e+1"

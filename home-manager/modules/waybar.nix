@@ -115,6 +115,7 @@ in
                 persistent-workspaces = {
                     "*" = 9;
                 };
+                ignore-workspaces = [ "10" ];
             };
 
             tray = {
