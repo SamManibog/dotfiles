@@ -101,8 +101,8 @@ in
                     activated = "󱙱";
                     deactivated = "󰌾";
                 };
-                tooltip-format-activated = "Lockscreen Disabled";
-                tooltip-format-deactivated = "Lockscreen Enabled";
+                tooltip-format-activated = "Auto Lock Disabled";
+                tooltip-format-deactivated = "Auto Lock Enabled";
             };
 
             clock = {

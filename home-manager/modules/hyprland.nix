@@ -91,7 +91,7 @@ in
 
                 blur = {
                     enabled = true;
-                    size = 3;
+                    size = 8;
                     passes = 1;
                     vibrancy = 0.1696;
                 };
@@ -159,20 +159,21 @@ in
 
                 follow_mouse = 1;
 
-                sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+                sensitivity = 0.2; # -1.0 - 1.0, 0 means no modification.
 
                 touchpad = {
                     natural_scroll = true;
-                    scroll_factor = 1.0;
+                    scroll_factor = 0.5;
                 };
             };
 
             gestures = {
-                workspace_swipe = false;
+                workspace_swipe = true;
             };
             
             bind = [
                 "$mainMod Control, R, exec, pkill waybar; waybar"
+                "$mainMod Shift, R, exec, nm-applet & waybar"
 
                 "$mainMod, Return, exec, $terminal"
                 "$mainMod, I, exec, firefox"
