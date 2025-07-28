@@ -37,8 +37,9 @@
         packages = with pkgs; [
             neofetch
             pwvucontrol
-            gimp3-with-plugins
             wl-clipboard
+            gimp3-with-plugins
+            krita
         ];
 
         sessionVariables = {

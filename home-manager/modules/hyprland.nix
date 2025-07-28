@@ -56,6 +56,7 @@ in
                 "hyprpaper"
                 "waybar"
                 "hyprsunset -i"
+                "[workspace 10 silent] firefox" 
             ];
 
             env = [
@@ -67,9 +68,9 @@ in
             ];
 
             general = {
-                gaps_in = 2;
-                gaps_out = 4;
-                border_size = 2;
+                gaps_in = 0;
+                gaps_out = 0;
+                border_size = 1;
                 "col.active_border" = lib.mkForce "rgb(${colors.base0C})";
                 "col.inactive_border" = lib.mkForce "rgb(${colors.base02})";
                 resize_on_border = false;
@@ -81,10 +82,10 @@ in
             decoration = {
                 rounding = 0;
                 active_opacity = 1.0;
-                inactive_opacity = 0.9;
+                inactive_opacity = 0.85;
 
                 shadow  = {
-                    enabled = true;
+                    enabled = false;
                     range = 4;
                     render_power = 3;
                 };
@@ -98,8 +99,8 @@ in
             };
 
             windowrule = [
-                "pin, class:(.blueman-manager-wrapped|nm-connection-editor|wofi)"
-                "float, class:(.blueman-manager-wrapped|nm-connection-editor|wofi)"
+                "pin, class:(.blueman-manager-wrapped|nm-connection-editor|wofi|com.saivert.pwvucontrol)"
+                "float, class:(.blueman-manager-wrapped|nm-connection-editor|wofi|com.saivert.pwvucontrol)"
             ];
 
             animations = {
@@ -117,9 +118,7 @@ in
                 animation = [
                     "global, 1, 10, default"
                     "border, 1, 5.39, easeOutQuint"
-                    "windows, 1, 4.79, easeOutQuint"
-                    "windowsIn, 1, 4.1, easeOutQuint, popin 87%"
-                    "windowsOut, 1, 1.49, linear, popin 87%"
+                    "windows, 1, 2, easeInOutCubic, slide"
                     "fadeIn, 1, 1.73, almostLinear"
                     "fadeOut, 1, 1.46, almostLinear"
                     "fade, 1, 3.03, quick"
@@ -128,9 +127,7 @@ in
                     "layersOut, 1, 1.5, linear, fade"
                     "fadeLayersIn, 1, 1.79, almostLinear"
                     "fadeLayersOut, 1, 1.39, almostLinear"
-                    "workspaces, 1, 1.94, almostLinear, fade"
-                    "workspacesIn, 1, 1.21, almostLinear, fade"
-                    "workspacesOut, 1, 1.94, almostLinear, fade"
+                    "workspaces, 1, 4, easeOutQuint, slide"
                 ];
             };
 
@@ -246,6 +243,10 @@ in
 
                 # Resize window with mainMod Shift and dragging
                 "$mainMod + Shift, mouse:272, resizewindow"
+            ];
+
+            bindp = [
+                "Control Alt, Delete, exec, [float; pin; size 90% 90%] kitty --hold -e btop"
             ];
 
             bindel = [
