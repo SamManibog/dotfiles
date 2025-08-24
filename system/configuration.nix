@@ -65,6 +65,12 @@
         extraGroups = [ "networkmanager" "wheel" ];
     };
 
+    # Nix-ld to allow use of dynamically linked libraries
+    programs.nix-ld = {
+        enable = true;
+        # libraries = [];
+    };
+
     # Web Browser (firefox)
     programs.firefox.enable = true;
 
