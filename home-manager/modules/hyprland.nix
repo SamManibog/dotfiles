@@ -57,6 +57,7 @@ in
                 "waybar"
                 "hyprsunset -i"
                 "[workspace 10 silent] firefox" 
+                "[silent] hyprctl dispatch closewindow initialtitle:Support Hyprland"
             ];
 
             env = [
