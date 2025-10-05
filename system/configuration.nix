@@ -6,10 +6,14 @@
 {
     imports =
         [
+            #./modules/hyprland.nix
+            ./modules/awesome.nix
+
+            ./modules/sddm.nix
+            #./modules/regreet.nix
+
             ./modules/bluetooth.nix
             ./modules/dbus.nix
-            ./modules/hyprland.nix
-            ./modules/wayland.nix
             ./modules/pipewire.nix
             ./modules/fonts.nix
             ./modules/networking.nix
@@ -17,9 +21,6 @@
             ./modules/plymouth.nix
             ./modules/upower.nix
             ./modules/kitty.nix
-
-            ./modules/sddm.nix
-            #./modules/regreet.nix
 
             ../themes/stylix.nix
 
@@ -125,6 +126,9 @@
     # List services that you want to enable:
     # Enable the OpenSSH daemon.
     services.openssh.enable = true;
+
+    security.pam.services.login.enableGnomeKeyring = true;
+    services.gnome.gnome-keyring.enable = true;
 
     # Open ports in the firewall.
     # networking.firewall.allowedTCPPorts = [ ... ];

@@ -13,6 +13,7 @@
         ./modules/yazi.nix
         ./modules/wlogout.nix
         ./modules/btop.nix
+        # ./modules/thunderbird.nix
 
         ../themes/stylix.nix
     ];
@@ -53,6 +54,10 @@
             mkdir ~/Projects
             '';
         };
+    };
+
+    dconf.settings = {
+        "org/gnome/desktop/peripherals/touchpad" = { natural-scroll = true; };
     };
 
     xdg = {
