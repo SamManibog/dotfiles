@@ -7,7 +7,9 @@
     imports =
         [
             #./modules/hyprland.nix
-            ./modules/awesome.nix
+            #./modules/awesome.nix
+            ./modules/niri.nix
+
 
             ./modules/sddm.nix
             #./modules/regreet.nix

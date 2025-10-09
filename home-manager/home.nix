@@ -13,6 +13,7 @@
         ./modules/yazi.nix
         ./modules/wlogout.nix
         ./modules/btop.nix
+        ./modules/niri.nix
         # ./modules/thunderbird.nix
 
         ../themes/stylix.nix
